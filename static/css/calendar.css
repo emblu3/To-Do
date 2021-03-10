@@ -1,0 +1,103 @@
+
+
+.container {
+    color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 13px;
+    margin-top: -5px;
+    margin-bottom: 13px;
+}
+
+
+.calendar {
+  width: calc(45rem/3);
+  height: calc(51rem/3);
+  background-color: #222227;
+  box-shadow: 0 calc(0.5rem/3) 1rem rgba(0, 0, 0, 0.4);
+  border: 3px solid #2da175; 
+  border-radius: 5px;
+}
+
+.month {
+  width: 100%;
+  height: 4rem;
+  background-color: #2da175;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 calc(2rem/3);
+  text-align: center;
+  text-shadow: 0 calc(0.3rem/3) calc(0.5rem/3) rgba(0, 0, 0, 0.5);
+}
+
+.month i {
+  font-size: calc(2.5rem/3);
+  cursor: pointer;
+}
+
+.month h1 {
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: calc(0.2rem/3);
+  margin-bottom: calc(1rem/3);
+}
+
+.month p {
+  font-size: calc(1.6rem/3);
+}
+
+.weekdays {
+  width: 100%;
+  height: calc(5rem/3);
+  padding: 0 calc(0.4rem/3);
+  display: flex;
+  align-items: center;
+}
+
+.weekdays div {
+  font-size: calc(1.5rem/3);
+  font-weight: 400;
+  letter-spacing: calc(0.1rem/3);
+  width: calc(calc(44.2rem / 7)/3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0 calc(0.3rem/3) calc(0.5rem/3) rgba(0, 0, 0, 0.5);
+}
+
+.days {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: calc(0.2rem/3);
+}
+
+.days div {
+  font-size: calc(1.4rem/3);
+  margin: calc(0.3rem/3);
+  width: calc(calc(39rem / 7)/3);
+  height: calc(5rem/3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0 calc(0.3rem/3) calc(0.5rem/3) rgba(0, 0, 0, 0.5);
+  transition: background-color 0.2s;
+}
+
+.days div:hover:not(.today) {
+  background-color: #262626;
+  border: calc(0.2rem/3) solid #777;
+  cursor: pointer;
+}
+
+.prev-date,
+.next-date {
+  opacity: calc(0.5/3);
+}
+
+.today {
+  background-color: #167e56;
+}

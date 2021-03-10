@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    min-height: 100vh;
+    background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.glass {
+    background: white;
+    min-height: 80vh; 
+    width: 80%;
+    background: linear-gradient(
+        to right bottom, 
+        rgba(255, 255, 255, 0.7), 
+        rgba(255, 255, 255, 0.3));
+    border-radius: 2rem;
+    z-index: 2;
+    backdrop-filter: blur(2rem);
+    display: flex;
+}
+
+.circle1,
+.circle2{
+    background: white;
+    background: linear-gradient(
+        to right bottom, 
+        rgba(255, 255, 255, 0.8), 
+        rgba(255, 255, 255, 0.3));
+    height: 20rem;
+    width: 20rem;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.circle1 {
+    top: 3%;
+    right: 5%;
+}
+
+.circle2 {
+    bottom: 2%;
+    left: 5%;
+}
+
+.dashboard{
+    max-width: min-content;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(
+        to right bottom, 
+        rgba(255, 255, 255, 0.7), 
+        rgba(255, 255, 255, 0.3));
+    border-radius: 2rem;
+}
+
+.tasks{
+    margin: 1rem;
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+form{
+    z-index: 5;
+}
+
+.addtask{
+    font-family: 'Maven Pro', sans-serif;
+    font-size: 1.1rem;
+    margin: 1.5rem;
+    margin-bottom: 1.3rem;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.taskbutton{
+    position: relative;
+    display: inline-block;
+    padding: 0.45rem;
+    margin-top: 1.95rem;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    border-radius: 40px;
+    overflow: hidden;
+    background: linear-gradient(
+        to right top,
+        rgba(6, 102, 204, 0.925),
+        rgba(72, 213, 235, 0.945));
+    border: 0;
+}
+
+

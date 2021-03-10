@@ -1,0 +1,69 @@
+@import url('http://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+.containercard {
+    position: relative;
+    display: flex;
+    max-width: 100%;
+    flex-wrap: wrap;
+    z-index: 1;
+    font-family: 'Poppins', 'sans-serif';
+}
+.containercard .card{
+    position: relative;
+    width: calc(365px/2);
+    height: calc(400px/2);
+    margin: calc(30px/2);
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.containercard .card .content{
+    padding: calc(20px);
+    text-align: center;
+    transition: 0.5s;
+}
+
+.containercard .card .content h2{
+    position: absolute;
+    top: calc(-30px/3);
+    right: calc(30px/3);
+    font-size: calc(8em/3);
+    color: rgba(0, 0, 0, 0.05);
+    pointer-events: none;
+}
+
+.containercard .card .content h3{
+    font-size: calc(1.3rem);
+    color: black;
+    line-height: 90%;
+    margin-bottom: 10px;
+    z-index: 1;
+}
+
+.containercard .card .content p{
+    font-size: calc(0.75rem);
+    color: black;
+    font-weight: 300;
+}
+
+.containercard .card .content a{
+    position: relative;
+    display: inline-block;
+    font-size: calc(0.5rem);
+    padding: calc(8px/3) calc(20px/3);
+    margin-top: calc(15px/3);
+    background: #fff;
+    color: #000;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    padding-top: 4px;
+}
