@@ -12,6 +12,16 @@
     <div class="form">
         <form action="/glass/update/{{task.id}}" method="POST">
             <input type="text" name="content" id="content" value="{{task.content}}">
+            <textarea rows='1' placeholder="Add a task..." id='content' name='content' value="{{task.content}}" required></textarea>
+            <script src="static/js/textarea.js"></script>
+            <div class="custom-select">
+                <select name='category' id='cusSelectbox'>
+                    <option value="Task" >Select</option>
+                    <option value="Urgent">High</option>
+                    <option value="Important">Medium</option>
+                    <option value="Task">Low</option>
+                </select>
+            </div>
             <input type="submit" value="Update">
         </form>
     </div> 
