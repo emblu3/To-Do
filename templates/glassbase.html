@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='css/taskname.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/cards.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/priority.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/animated.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/glassstyle.css') }}">
         {% block head %}{% endblock %}
     </head>
@@ -22,6 +23,21 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+        <div class='wrapper'>
+            <div class='box'>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        
         <main>
             <section class="glass">
                 {% block body %}{% endblock %}
