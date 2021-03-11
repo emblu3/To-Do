@@ -90,15 +90,27 @@ def update(id):
     if request.method == 'POST':
         task.content = request.form['content']
         
-            
+        task_priority = request.form.getlist('category')
+        task_priority = task_priority[0]
+        task.category = task_priority
+        if task_priority == "Urgent":
+            priority = 1
+        elif task_priority == 'Important':
+            priority = 2
+        else:
+            priority = 3
+        task.priority = priority
+
         try:
             db.session.commit()
             return redirect('/glass')
         except:
             return 'There was an issue updating your task'
 
-    else:
-        return render_template('glassupdate.html', task=task)
+    #else:
+    #    return render_template('glass.html', task=task)
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
