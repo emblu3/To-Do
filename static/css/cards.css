@@ -16,16 +16,14 @@
     box-shadow: 5px 5px 50px rgba(0, 0, 0, 0.5);
     border-radius: 15px;
     background: rgba(255, 255, 255, 0.1);
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
+    overflow: scroll;
     border-top: 1px solid rgba(255, 255, 255, 0.5);
     border-left: 1px solid rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(5px);
 }
 
 .containercard .card .content{
-    padding: calc(20px);
+    padding: 0px 0px 0px 0px;
     text-align: center;
     transition: 0.5s;
 }
@@ -49,10 +47,11 @@
     font-size: calc(8em/3);
     color: rgba(255, 208, 0, 0.336);
     pointer-events: none;
+    z-index: -1;
 }
 
 .task{
-    position: absolute;
+    position: fixed;
     top: calc(-30px/3);
     right: calc(30px/3);
     font-size: calc(8em/3);
@@ -65,18 +64,22 @@
 .containercard .card .content h3{
     font-size: calc(1.3rem);
     color: black;
-    line-height: 90%;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     z-index: 1;
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-weight: bold;
 }
 
 .containercard .card .content p{
     font-size: calc(0.9rem);
     color: black;
     font-weight: 300;
+    padding: 5px 0 10px 0;
 }
 
-.containercard .card .content a{
+.containercard .card .content a,
+.containercard .card .content button{
     font-size: calc(0.58rem);
     padding: calc(8px/3) calc(20px/3);
     margin-top: calc(15px/3);
@@ -90,6 +93,9 @@
     font-weight: 500;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     padding-top: 4px;
+    border: none;
+    font-family: 'Poppins', 'sans-serif';
+    cursor: pointer;
 }
 
 #deletebutton{
@@ -97,31 +103,40 @@
         to right top,
         rgba(255, 187, 187, 0.76),
         rgb(255, 255, 255));
+    padding-bottom: 3px;
 }
 
 
 #contentflip {
     transition: transform 1s;
     transform-style: preserve-3d;
-    position: relative;
-  }
+}
   
-  #contentflip.is-flipped {
+#contentflip.is-flipped {
     transform: rotateY(180deg);
-  }
+}
   
-  .card__face {
+.card__face {
     color: white;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-  }
+}
   
+.card__face--front {
+    padding: 15px 0 10px 5px;
+    width: calc(350px/2);
+    align-content: center;
+    position: absolute;
+    z-index: 1;
+}
   
   .card__face--back {
-    margin-top: -50%;
+    padding: 20px 7px 0 0;
+    width: calc(350px/2);
     align-content: center;
     transform: rotateY(180deg);
-    cursor: pointer;
+    z-index: 3;
+    position: absolute;
   }
   
   .backupdate {

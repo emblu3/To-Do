@@ -1,3 +1,9 @@
+/*
+ * Created by Coding Snow (?) on 1/13/2021.
+ * Source: https://www.codingsnow.com/2021/01/digital-clock-with-date-day-month-year.html
+ */
+
+
 function updateClock(){
     var now = new Date();
     var dname = now.getDay(),

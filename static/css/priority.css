@@ -1,3 +1,8 @@
+/*
+ * Created by w3schools (?) on (?).
+ * Source: https://www.w3schools.com/howto/howto_custom_select.asp
+ */
+
 .priority {
     margin-right: 1.5rem;
     width: calc(100%/4);
@@ -5,7 +10,7 @@
   
   .custom-select{
     position: relative;
-    font-size: 0.8rem;
+    font-size: 0.79rem;
   }
 
   .custom-select select {

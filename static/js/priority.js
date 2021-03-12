@@ -1,3 +1,9 @@
+/*
+ * Created by w3schools (?) on (?).
+ * Source: https://www.w3schools.com/howto/howto_custom_select.asp
+ */
+
+
 $(function () {
 	var x, i, j, l, ll, selElmnt, a, b, c;
 	/* Look for any elements with the class "custom-select": */

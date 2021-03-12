@@ -1,5 +1,5 @@
-jQuery(function($) {
-    $('.flipper').click(function() {
-         $(this).parent().parent().toggleClass('is-flipped');
+jQuery(document).ready(function($) {
+    $('.flipper').click(function() { 
+         $(this).parent().parent().addClass('is-flipped');
     });
   });

@@ -1,3 +1,9 @@
+/*
+ * Created by Unknown (IashaNoz) on 5/30/2020.
+ * Source: https://github.com/lashaNoz/Calendar/blob/master/script.js
+ */
+
+
 const date = new Date();
 
 const renderCalendar = () => {

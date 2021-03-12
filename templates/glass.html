@@ -96,7 +96,6 @@
             <div class="button">
                 <input class='taskbutton' type="submit" value='ADD'/>
             </div>
-            <script src="static/js/taskbutton.js"></script>
             
         </div>
     </form>
@@ -105,7 +104,6 @@
         {% for task in tasks %}
         <div class="card">
             <div class="content"    id='contentflip'>
-
                 <div class="card__face card__face--front">
                     {% if task.category == 'Urgent' %}
                     <h2 class='urgent'>!!!</h2>
@@ -118,7 +116,7 @@
                     {% endif %}
                     <h3>{{ task.category }}</h3>
                     <p>{{ task.content }}</p>
-                    <a href='#' class='flipper'>Update</a>
+                    <button class=flipper type="button">Update</button>
                     <a id='deletebutton' href='/glass/delete/{{task.id}}'>Delete</a>
                 </div>
                 <div class="card__face card__face--back">
@@ -141,7 +139,6 @@
                     </form>
                 </div>
                 <script type="text/javascript" src="static/js/cards.js"></script>
-
             </div>
         </div>
         {% endfor %}
