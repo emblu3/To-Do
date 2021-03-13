@@ -9,15 +9,16 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/title.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/calendar.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/clock.css') }}">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/taskbutton.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/taskname.css') }}">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/cardscontainer.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/priority.css') }}">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/animated.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/taskbutton.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/cardscontainer.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/glassstyle.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/animated.css') }}">
         {% block head %}{% endblock %}
     </head>
     <body onload='initClock()'>
