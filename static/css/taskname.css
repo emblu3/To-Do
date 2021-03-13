@@ -8,7 +8,7 @@
     margin-bottom: 2px;
 }
 
-.addtask textarea{
+textarea{
     font-family: 'Poppins', 'sans-serif';
     background: linear-gradient(
         to right bottom, 
@@ -18,34 +18,4 @@
     width: 100%;
     padding: 0.5rem;
     border-radius: 2rem;
-}
-
-.content textarea{
-    background: linear-gradient(
-        to right bottom, 
-        rgba(255, 255, 255, 0.7), 
-        rgba(255, 255, 255, 0.3));
-    border: none;
-    margin-top: 2px;
-    width: 100%;
-    padding: 0.5rem;
-    border-radius: 2rem;
-}
-
-.backupdate{
-    font-size: calc(0.5rem);
-    padding: calc(8px/3) calc(20px/3);
-    margin-top: calc(15px/3);
-    background: linear-gradient(
-        to right top,
-        rgba(6, 102, 204, 0.925),
-        rgba(72, 213, 235, 0.945));
-    color: #fff;
-    border-radius: 20px;
-    text-decoration: none;
-    font-weight: 500;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    padding-top: 4px;
-    border: transparent;
-    font-family: 'Poppins', 'sans-serif';
 }

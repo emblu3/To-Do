@@ -1,6 +1,6 @@
 @import url('http://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
 
-.containercard {
+.cardscontainer {
     position: relative;
     display: flex;
     max-width: 100%;
@@ -8,7 +8,7 @@
     z-index: 1;
     font-family: 'Poppins', 'sans-serif';
 }
-.containercard .card{
+.cardscontainer .card{
     position: relative;
     width: 182px;
     height: 200px;
@@ -16,70 +16,80 @@
     box-shadow: 5px 5px 50px rgba(0, 0, 0, 0.5);
     border-radius: 15px;
     background: rgba(255, 255, 255, 0.1);
-    overflow: scroll;
+    overflow-y: scroll;
     border-top: 1px solid rgba(255, 255, 255, 0.5);
     border-left: 1px solid rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(5px);
 }
 
-.containercard .card .content{
-    padding: 0px 0px 0px 0px;
+.cardscontainer .card .content{
     text-align: center;
     transition: 0.5s;
 }
 
+.card__face--front {
+    padding: 15px 0 10px 5px;
+    width: calc(350px/2);
+    align-content: center;
+    position: absolute;
+    z-index: 1;
+}
 
-
-
-.urgent{
+.cardscontainer .card .content .card__face--front h2{
     position: absolute;
     top: -10px;
     right: 10px;
     font-size: 2.7em;
-    color: rgba(255, 0, 0, 0.2);
     pointer-events: none;
 }
 
-.important{
-    position: absolute;
-    top: -10px;
-    right: 10px;
-    font-size: 2.7em;
+.urgent-h2{
+    color: rgba(255, 0, 0, 0.2);
+}
+
+.important-h2{
     color: rgba(255, 208, 0, 0.336);
-    pointer-events: none;
     z-index: -1;
 }
 
-.task{
-    position: fixed;
-    top: -10px;
-    right: 10px;
-    font-size: 2.7em;
+.task-h2{
     color: rgba(0, 0, 0, 0.05);
-    pointer-events: none;
 }
 
-
-
-.containercard .card .content h3{
+.cardscontainer .card .content h3{
     font-size: 1.3rem;
     color: black;
     margin-bottom: 5px;
     z-index: 1;
     text-transform: uppercase;
     text-decoration: underline;
+}
+
+.urgent-h3{
+    text-shadow: 2px 2px 1rem rgba(255, 46, 46, 0.5);
     font-weight: bold;
 }
 
-.containercard .card .content p{
+.important-h3{
+    text-shadow: 2px 2px 1rem rgba(255, 208, 0, 0.5);
+    font-weight: normal;
+}
+
+.task-h3{
+    text-shadow: 2px 2px 1rem rgba(1, 5, 0, 0.3);
+    font-weight: lighter;
+}
+
+.cardscontainer .card .content p{
     font-size: 0.9rem;
     color: black;
     font-weight: 300;
     padding: 5px 0 10px 0;
+    word-wrap: break-word
 }
 
-.containercard .card .content a,
-.containercard .card .content button{
+.cardscontainer .card .content button,
+.cardscontainer .card .content a{
     font-size: 0.58rem;
     padding: 2.7px 6.7px;
     margin-top: 5px;
@@ -106,6 +116,38 @@
     padding-bottom: 3px;
 }
 
+.card__face--back {
+    padding: 20px 7px 0 0;
+    width: 175px;
+    align-content: center;
+    transform: rotateY(180deg);
+    z-index: 3;
+    position: absolute;
+}
+
+.content textarea{
+    margin-top: 2px;
+}
+
+.backupdate{
+    font-size: 0.5rem;
+    padding: calc(8px/3) calc(20px/3);
+    margin-top: 5px;
+    background: linear-gradient(
+        to right top,
+        rgba(6, 102, 204, 0.925),
+        rgba(72, 213, 235, 0.945));
+    color: #fff;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    padding-top: 4px;
+    border: transparent;
+    font-family: 'Poppins', 'sans-serif';
+    cursor: pointer;
+}
+
 
 #contentflip {
     transition: transform 1s;
@@ -121,33 +163,4 @@
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
-  
-.card__face--front {
-    padding: 15px 0 10px 5px;
-    width: calc(350px/2);
-    align-content: center;
-    position: absolute;
-    z-index: 1;
-}
-  
-  .card__face--back {
-    padding: 20px 7px 0 0;
-    width: 175px;
-    align-content: center;
-    transform: rotateY(180deg);
-    z-index: 3;
-    position: absolute;
-  }
-  
-  .backupdate {
-    cursor: pointer;
-  }
-
-  .card__face--back .select-selected,
-  .card__face--back .select-items {
-    background: linear-gradient(
-        to right bottom, 
-        rgba(255, 255, 255, 1), 
-        rgba(255, 255, 255, 1));
-  }
   

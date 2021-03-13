@@ -5,6 +5,7 @@
 
 @import url(https://fonts.googleapis.com/css2?family=Abel&display=swap);
 
+
 .datetime{
     color: #fff;
     background: #10101E;
@@ -53,7 +54,6 @@
     font-size: 1rem;
     font-weight: 600;
     text-transform: uppercase;
-    margin-top: 0px;
     margin-right: 3px;
     padding: 0 5px;
     border-radius: 3px;

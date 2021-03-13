@@ -1,0 +1,18 @@
+.addtaskbutton{
+    position: relative;
+    display: inline-block;
+    padding: 0.45rem;
+    margin-top: 2.1rem;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    border-radius: 40px;
+    overflow: hidden;
+    background: linear-gradient(
+        to right top,
+        rgba(6, 102, 204, 0.925),
+        rgba(72, 213, 235, 0.945));
+    border: 0;
+}

@@ -22,11 +22,11 @@
     <div class="titlecontainer">
         <div class="title">
             <span class='text1'>To-Dooz</span>
-            <span class='text2'>List</span>
+            <span class='text2'>Task Manager</span>
         </div>
     </div>
 
-    <div class="container">
+    <div class="calendarcontainer">
         <div class="calendar">
             <div class="month">
             <i class="fa fa-angle-left prev"></i>
@@ -93,28 +93,30 @@
             </div>
             <script src="static/js/priority.js"></script>
 
-            <div class="button">
-                <input class='taskbutton' type="submit" value='ADD'/>
+            <div class="taskbutton">
+                <input class='addtaskbutton' type="submit" value='ADD'/>
             </div>
             
         </div>
     </form>
 
-    <div class="containercard">
+    <div class="cardscontainer">
         {% for task in tasks %}
         <div class="card">
-            <div class="content"    id='contentflip'>
+            <div class="content" id='contentflip'>
                 <div class="card__face card__face--front">
                     {% if task.category == 'Urgent' %}
-                    <h2 class='urgent'>!!!</h2>
+                    <h2 class='urgent-h2'>!!!</h2>
+                    <h3 class='urgent-h3'>{{ task.category }}</h3>
                     {% endif %}
                     {% if task.category == 'Important' %}
-                    <h2 class='important'>!!</h2>
+                    <h2 class='important-h2'>!!</h2>
+                    <h3 class='important-h3'>{{ task.category }}</h3>
                     {% endif %}
                     {% if task.category == 'Task' %}
-                    <h2 class='task'>!</h2>
+                    <h2 class='task-h2'>!</h2>
+                    <h3 class='task-h3'>{{ task.category }}</h3>
                     {% endif %}
-                    <h3>{{ task.category }}</h3>
                     <p>{{ task.content }}</p>
                     <button class=flipper type="button">Update</button>
                     <a id='deletebutton' href='/delete/{{task.id}}'>Delete</a>
@@ -122,15 +124,14 @@
                 <div class="card__face card__face--back">
                     <form action="/update/{{task.id}}" method="POST">
                         <div class="custom-select">
-                            <select name='category' id='cusSelectbox'>
+                            <select name='category'>
                                 <option value="Task">Select Priority</option>
                                 <option value="Urgent">High</option>
                                 <option value="Important">Medium</option>
                                 <option value="Task">Low</option>
                             </select>
                         </div>
-                        <textarea rows='5' placeholder="Add a task..." id='content' name='content' required>{{task.content}}</textarea>
-                        
+                        <textarea rows='4' placeholder="Add a task..." id='content' name='content' required>{{task.content}}</textarea>
                         <script src="static/js/textarea.js"></script>
                         <div class="backupdates">
                             <input class="backupdate" type="submit" value="Update">
@@ -138,8 +139,8 @@
                         </div>
                     </form>
                 </div>
-                <script type="text/javascript" src="static/js/cards.js"></script>
             </div>
+            <script type="text/javascript" src="static/js/contentflip.js"></script>
         </div>
         {% endfor %}
     </div>
@@ -152,7 +153,6 @@
             'max-glare': 0.5,
         });
     </script>
-
 </div>
 
 {% endblock %}

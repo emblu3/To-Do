@@ -3,7 +3,7 @@
  * Source: https://github.com/lashaNoz/Calendar/blob/master/style.css
  */
 
-.container {
+.calendarcontainer {
     color: #eee;
     display: flex;
     justify-content: center;
