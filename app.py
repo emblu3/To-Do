@@ -37,9 +37,7 @@ def index():
         else:
             priority = 3
         new_task = Todo(content=task_content, category=task_priority, priority=priority) #create new task from input
-        print(type(task_content))
-        print(type(new_task))
-        print(new_task)
+        
         try: #commit task to database
             db.session.add(new_task)
             db.session.commit()
