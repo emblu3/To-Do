@@ -1,15 +1,11 @@
 from flask import Flask, render_template, request, redirect, session
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime, timedelta 
+from flask_session import Session
 
 app = Flask(__name__)
-
-app.secret_key = 'oWX$rS;uLr!bFh]caJ,/i4krTjcwL)?N_/+1h'
-app.permanent_session_lifetime = timedelta(days=5)
-
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
 db = SQLAlchemy(app)
-
 
 class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -25,8 +21,6 @@ class Todo(db.Model):
 def index():
     if request.method == 'POST': #grab task and put on database
         
-        session.permanent = True
-        
         task_content = request.form['content'] #content of input
         task_priority = request.form.getlist('category')
         task_priority = task_priority[0]
@@ -37,26 +31,18 @@ def index():
         else:
             priority = 3
         new_task = Todo(content=task_content, category=task_priority, priority=priority) #create new task from input
-        
+
         try: #commit task to database
             db.session.add(new_task)
             db.session.commit()
-
-            tasks = Todo.query.order_by(Todo.priority).order_by(Todo.date_created).all() #return database contents in order of creation (new-old)
-            session['user'] = tasks
 
             return redirect('/') #redirect back home
         except:
             return 'There was an issue adding your task'
 
     else:
-        #tasks = Todo.query.order_by(Todo.priority).order_by(Todo.date_created).all() #return database contents in order of creation (new-old)
-        
-        if 'user' in session:
-            tasks = session['user']
-            return render_template('index.html', tasks=tasks)
-
-        #return render_template('index.html', tasks=tasks)
+        tasks = Todo.query.order_by(Todo.priority).order_by(Todo.date_created).all() #return database contents in order of creation (new-old)
+        return render_template('index.html', tasks=tasks)
 
 
 @app.route('/delete/<int:id>')
