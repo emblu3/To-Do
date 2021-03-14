@@ -17,3 +17,6 @@ To-Dooz is a [Flask] application made to record to-do tasks and update as needed
 
 ### Take a Look!
 Check it out: https://to-dooz.herokuapp.com/
+
+#### _NOTE_
+Tasks have been set to expire after 24 hours.
