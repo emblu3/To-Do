@@ -88,4 +88,46 @@ main {
 
 
 
+@media only screen and (max-width: 700px) {
+    /* For mobile phones: */
+    .dashboard {
+      display: none;
+    }
 
+    .addtask{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .addtask h1{
+        text-align: center;
+        margin-left: 0px;
+        margin-bottom: 2px;
+        margin-right: 0rem;
+    }
+
+    .taskname{
+        margin-right: 0rem;
+        margin-bottom: 20px;
+        min-width: 100%;
+    }
+
+    .priority{
+        margin-bottom: 20px;
+        min-width: 100%;
+        margin-right: 0px;
+    }
+
+    .addtaskbutton{
+        margin-top: -25px;
+        padding: 0.45rem;
+    }
+
+
+    .cardscontainer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+  }
