@@ -1,8 +1,6 @@
-from flask import Flask, render_template, request, redirect, session, make_response
+from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime, timedelta 
-from flask_session import Session
-from ast import literal_eval
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
@@ -42,6 +40,10 @@ def index():
             return 'There was an issue adding your task'
 
     else:
+        expiration_days = 1
+        limit = datetime.utcnow() - timedelta(days=expiration_days)
+        Todo.query.filter(Todo.date_created <= limit).delete()
+        db.session.commit()
         tasks = Todo.query.order_by(Todo.priority).order_by(Todo.date_created).all() #return database contents in order of creation (new-old)
         return render_template('index.html', tasks=tasks)
 
@@ -84,4 +86,4 @@ def update(id):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
